@@ -307,3 +307,42 @@ const map1 = new Map([['key1','value1'], ['key2','value2']]);
 console.log(map1);
 // Map(2) {'key1' => 'value1', 'key2' => 'value2'}
 ```
+---
+### 요소 개수 확인 
+Map 객체의 요소 개수를 확인할 때는 `Map.prototype.size` 프로퍼티를 사용합니다.
+```js
+const{ size } = new Map ([['key1','value1'], ['key2','value2']]);
+
+console.log(size); //2 
+
+```
+set 과 동일하게 setter 함수 없이 getter 함수만 존재합니다.
+따라서 Map 객체의 요소 개수를 변경할 수 없습니다. 
+
+```js
+const map = new Map ([['key1','value1'], ['key2','value2']]);
+
+console.log(Object.getOwnPropertyDescriptor(Map.prototype, 'size'));
+// {set: undefined, enumerable: false, configurable: true, get: ƒ}
+
+map.size = 10; // 무시된다.
+
+console.log(map.size); //2 
+```
+---
+### 요소 추가
+`Map.prototype.set` 메서드를 사용합니다.
+
+```js
+const map = new Map();
+console.log(map);
+
+map.set('key1','value1');
+console.log(map);
+
+// Map(0) {size: 0}
+// Map(1) {'key1' => 'value1'}
+```
+set 메서드는 
+- 새로운 요소가 추가된 Map 객체를 반환합니다
+- 연속적인 호출이 가능합니다.
