@@ -266,7 +266,7 @@ console.log(setB.difference(setA));
 ```js
 Set.prototype.isSupperset = function (subset) {
     for(const value of subset) {
-        
+
         if(!this has(value)) 
         return false;
     } else 
@@ -280,4 +280,30 @@ console.log(setB.isSupperset(setA));
 
 // Set(2) {1, 3}
 // Set(0) {size: 0}
+```
+---
+## Map
+- Map 객체는 키와 값의 쌍으로 이루어진 컬렉션
+- 객체와 유사하지만 
+
+|구분|객체|Map 객체|
+|------|---|---|
+|키로 사용할 수 있는 값|문자열 또는 심벌값|객체를 포함한 모든 값|
+|이터러블|❌|⭕️|
+|요소 개수 확인|Object.keys(obj).length|map.size
+---
+### Map 객체의 생성
+Map 생성자 함수로 생성한다. 함수에 인수를 전달하지 않으면 빈 Map이 생성된다.
+
+```js
+const map = new Map();
+console.log(map);  // Map(0) {}
+```
+
+- Map 생성자 함수는 이터러벌을 인수로 전달받아 Map 객체를 생성합니다. 
+- 이 때, 인수로 전달되는 이터러블은 키와 값의 쌍으로 이루어진 요소로 구성됩니다.
+```js
+const map1 = new Map([['key1','value1'], ['key2','value2']]);
+console.log(map1);
+// Map(2) {'key1' => 'value1', 'key2' => 'value2'}
 ```
