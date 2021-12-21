@@ -23,6 +23,8 @@ console.log(x); // 10
 #### strict mode와 유사한 효과를 내는 ESLint 린트도구
 - 정적 분석 기능을 통해 소스코드를 실행하기 전에 소스코드를 스캔하여 문법적 오류와 잠재적 오류까지 찾아내 오류의 원인을 리포팅해주는 도구입니다. 
 - strict mode가 제한하는 오류와 코딩 컨벤션을 정의해서 강제할 수 있어서 효과적입니다.
+- ![image](https://user-images.githubusercontent.com/89507327/145851341-1476550d-db09-48d5-99f2-1eaefbae2030.png)
+
 
 #### strict mode의 적용
 - ES6에서 도입된 클래스와 모듈은 기본적으로 strict mode가 적용됩니다.
@@ -89,11 +91,11 @@ console.log(x);
 - strict mode는 즉시 실행 함수로 감싼 스크립트 단위로 적용하는 것이 바람직합니다.
 ```js
 (function () {
-    var let = 10;
+    var let = 10; //에러가 발생하지 않습니다 
     function foo () {
         'use strict';
         
-        let = 20; // 에러 
+        let = 20; // syntaxError
     }
     foo();
 }()); 
@@ -141,4 +143,3 @@ with문은 객체의 프로퍼티를 반복할 때 객체 이름을 생략할 �
     }
 }());
 ```
-#### strict mode 적용에 의한 변화
