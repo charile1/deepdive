@@ -343,6 +343,6 @@ console.log(map);
 // Map(0) {size: 0}
 // Map(1) {'key1' => 'value1'}
 ```
-set 메서드는 
+set 메서드의 특징
 - 새로운 요소가 추가된 Map 객체를 반환합니다
 - 연속적인 호출이 가능합니다.
